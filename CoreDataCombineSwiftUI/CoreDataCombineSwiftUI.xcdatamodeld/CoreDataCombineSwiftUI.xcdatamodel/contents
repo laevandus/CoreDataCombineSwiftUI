@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ColorItem" representedClassName=".ColorItem" syncable="YES">
+        <attribute name="hex" attributeType="String" minValueString="7" maxValueString="7" regularExpressionString="^#[A-Fa-f0-9]{6}$"/>
+    </entity>
+    <elements>
+        <element name="ColorItem" positionX="-63" positionY="-18" width="128" height="58"/>
+    </elements>
+</model>
