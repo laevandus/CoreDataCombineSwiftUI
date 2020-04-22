@@ -42,17 +42,26 @@ extension ContentView {
         // MARK: Adding New Colors
         
         func addRandomColor() {
+            // ColorItem requires hex to be set when saving the model in CoreData store.
+            // Those 3 lines create a new ColorItem and save it.
             let color = ColorItem(context: managedObjectContext)
             color.hex = ColorItem.randomHex()
             managedObjectContext.saveIfNeeded()
             
-            
+            /*
+            // Example of how to use KVO complient publisher and printing out a hex string (NSManagedObject is KVO complient).
+            // Note that sink is triggered immediately and when property changes.
             let cancellable = color.publisher(for: \.hex).sink { (string) in
-                print(string)
+                print("Color item hex: \(string)")
             }
             cancellables.append(cancellable)
+            
+            // This triggers KVO change.
             color.hex = ColorItem.randomHex()
+            
+            // Keep context clean and save latest hex change.
             managedObjectContext.saveIfNeeded()
+            */
         }
         
         // Observing Change Notifications
